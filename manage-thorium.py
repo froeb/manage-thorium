@@ -126,8 +126,6 @@ def main():
 
     args = parser.parse_args()
 
-    # Define a general temporary directory for downloads
-    temp_dir = tempfile.gettempdir()
 
     if args.command in ['install', 'update']:
         installed_version = get_installed_version()
@@ -150,14 +148,17 @@ def main():
             print(f"Updating Thorium from version {installed_version} to {latest_version}...")
 
         print("Latest .deb release URL:", latest_deb_url)
-        destination_folder = "/home/kai/projects/renew-thorium"  # Update this path
-        downloaded_file = download_file(latest_deb_url, destination_folder)
-        install_deb(downloaded_file)
-        print(f"Installed {downloaded_file}")
+        # Define a general temporary directory for downloads
+        temp_dir = tempfile.gettempdir()
+        downloaded_file = download_file(latest_deb_url, temp_dir)
+        try:
+           install_deb(downloaded_file)
+           print(f"download {downloaded_file} and installed it from {temp_dir}")
+        except Error:
+           print(f"downloading {downloaded_file} and/or installing it from {temp_dir} failed")
 
     elif args.command == 'remove':
         remove_package("thorium-browser")  # Replace with the actual package name if different
 
 if __name__ == "__main__":
     main()
-
