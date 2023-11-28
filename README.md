@@ -33,3 +33,7 @@ To ensure you always have the latest version of the Thorium browser, you can set
     Make sure to replace `/path/to/manage-thorium.py` with the actual path to the script on your system.
 
 3. Save the file and exit the editor. Your system will now automatically check for and install updates to the Thorium browser each day at the specified time.
+
+## See also
+
+I will try to generalise this code, so that it can also be used for other github repositories/projects in this project: https://github.com/froeb/ghpm
