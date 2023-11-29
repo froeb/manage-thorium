@@ -36,4 +36,4 @@ To ensure you always have the latest version of the Thorium browser, you can set
 
 ## See also
 
-I will try to generalise this code, so that it can also be used for other github repositories/projects in this project: https://github.com/froeb/ghpm
+A more generalised version of this code, that can be used for different github repositories/projects including such with other package managers can be found here: https://github.com/froeb/ghpm
